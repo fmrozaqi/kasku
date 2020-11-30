@@ -13,6 +13,8 @@
 </div>
 <!-- ./wrapper -->
 
+<!-- Clipboard -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
 <!-- jQuery 3 -->
 <script src="<?= BASEURL ?>/assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -42,6 +44,39 @@
       'autoWidth'   : false
     })
   })
+</script>
+
+<script>
+  $('#copy_nomor').tooltip({
+    trigger: 'click',
+    placement: 'bottom'
+  });
+
+  function setTooltip(message) {
+    $('#copy_nomor').tooltip('hide')
+      .attr('data-original-title', message)
+      .tooltip('show');
+  }
+
+  function hideTooltip() {
+    setTimeout(function() {
+      $('#copy_nomor').tooltip('hide');
+    }, 1000);
+  }
+
+  // Clipboard
+
+  var clipboard = new Clipboard('#copy_nomor');
+
+  clipboard.on('success', function(e) {
+    setTooltip('Copied!');
+    hideTooltip();
+  });
+
+  clipboard.on('error', function(e) {
+    setTooltip('Failed!');
+    hideTooltip();
+  });
 </script>
 </body>
 </html>

@@ -14,7 +14,7 @@
 	          				?>
 		                <li class="item">
 		                  <div class="product-img">
-		                    <img src="<?= $data['img'] ?>" alt="Product Image">
+		                    <img src="<?= $data['img'] ?>" class="img-circle" alt="User Image">
 		                  </div>
 		                  <div class="product-info">
 		                    <a href="<?= BASEURL ?>/profil/<?= $mhs['id_user'] ?>" class="product-title"><?= $mhs['nama'] ?>
