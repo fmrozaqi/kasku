@@ -9,12 +9,6 @@
         <!-- <h4><i class="icon fa fa-ban"></i> Alert!</h4> -->
         Silahkan lakukan transfer GOPAY ke nomor 08122614615 atau dengan scan QR CODE di bawah ini
       </div>
-
-      <div class="alert alert-info alert-dismissible">
-        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-        <!-- <h4><i class="icon fa fa-ban"></i> Alert!</h4> -->
-        Silahkan masukkan nominal uang kas yang ingin di bayarkan. Selanjutnya Admin (bendahara) akan mengkonfirmasi pembayaran kas Anda dan akan tampil di halaman Rincian Kas.
-      </div>
       <div class="row">
         <img src="<?= BASEURL ?>/assets/dist/img/qrcode.jpg" style="width:50%" class="mx-auto d-block" alt="Nomor Gopay">
       </div>
@@ -23,6 +17,12 @@
       </div>
 
       <hr>
+
+      <div class="alert alert-info alert-dismissible">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        <!-- <h4><i class="icon fa fa-ban"></i> Alert!</h4> -->
+        Silahkan masukkan nominal uang kas yang ingin di bayarkan. Selanjutnya Admin (bendahara) akan mengkonfirmasi pembayaran kas Anda dan akan tampil di halaman Rincian Kas.
+      </div>
       
       <form class="form-horizontal" action="<?= BASEURL; ?>/bayar/proses/<?= $data['user']['username'] ?>" method="POST">
         <h4>Masukkan Jumlah</h4>
