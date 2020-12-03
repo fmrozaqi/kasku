@@ -54,7 +54,7 @@
       <section class="content">
       	<div class="row col-sm-5">
       		<h2 style="margin-top: 70px;">Selamat Datang</h2>
-      		<p style="margin-top: 40px;font-size: 15px">Ka$Ku adalah Sitem Pengelolaan Uang Kas Kelas. <br>Untuk memanfaatkan sistem ini, Anda harus login terlebih dahulu dengan NIM Anda yang sudah terdaftar dalam sistem. Jika belum memiliki akun, silahkan minta ke bendahara kelas.</p><br>
+      		<p style="margin-top: 40px;font-size: 15px">Ka$Ku adalah Sitem Pengelolaan Uang Kas Kelas. <br>Untuk memanfaatkan sistem ini, Anda harus login terlebih dahulu dengan Nomor Induk Anda yang sudah terdaftar dalam sistem. Jika belum memiliki akun, silahkan minta ke bendahara kelas.</p><br>
       		<p style="font-size: 15px;">Selanjutnya, Anda hanya memasukkan nominal yang ingin di bayarkan untuk membayar uang kas kelas dan silahkan tunggu sampai bendahara mengkonfirmasi pembayaran uang kas Anda.</p>
       	</div>
       	<div class="row col-sm-2"></div>
@@ -62,8 +62,8 @@
       		<h2 style="margin-top: 70px;">Silahkan Masuk</h2>
       		<form action="<?= BASEURL ?>/login/loginUser" method="post">
 			  <div class="form-group" style="margin-top: 40px;">
-			    <label for="nim">NIM</label>
-			    <input type="text" class="form-control" name="nim" id="nim" placeholder="Masukkan NIM">
+			    <label for="nim">Nomor Induk</label>
+			    <input type="text" class="form-control" name="nim" id="nim" placeholder="Masukkan Nomor Induk">
 			  </div>
 			  <div class="form-group">
 			    <label for="pass">Password</label>

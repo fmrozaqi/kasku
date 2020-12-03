@@ -25,7 +25,7 @@ class Login extends Controller
 			}else{
 				?>
 				<script>
-					alert('NIM atau Password salah. Silahkan coba lagi');
+					alert('Nomor Induk atau Password salah. Silahkan coba lagi');
 					document.location.href="<?= BASEURL ?>/login";
 				</script>
 				<?php
