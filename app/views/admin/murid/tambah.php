@@ -2,10 +2,10 @@
       <!-- Default box -->
       <div class="box">
         <div class="box-header with-border">
-          <h3 class="box-title" style="margin-right: 10px;">Tambah Data Mahasiswa </h3>
-          <a href="<?= BASEURL ?>/admin/data_mahasiswa" class="btn btn-success btn-xs">Kembali</a>
+          <h3 class="box-title" style="margin-right: 10px;">Tambah Data Murid </h3>
+          <a href="<?= BASEURL ?>/admin/data_murid" class="btn btn-success btn-xs">Kembali</a>
         </div>
-        <form class="form-horizontal" action="<?= BASEURL; ?>/admin/tambah_data_mahasiswa" method="POST">
+        <form class="form-horizontal" action="<?= BASEURL; ?>/admin/tambah_data_murid" method="POST">
           <div class="box-body">
             <div class="form-group">
                   <label class="col-sm-3 control-label">Nomor Induk</label>

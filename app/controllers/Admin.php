@@ -24,8 +24,8 @@ class Admin extends Controller
 			}
 
 			$data['masuk'] = $this->model('KasMasuk')->getLimitData(4);
-			$data['mhs'] = $this->model('Mahasiswa')->getLimitData(0,3);
-			$data['countSiswa'] = $this->model('Mahasiswa')->getRowCount();
+			$data['mrd'] = $this->model('Murid')->getLimitData(0,3);
+			$data['countSiswa'] = $this->model('Murid')->getRowCount();
             $data['keluar'] = $this->model('Kaskeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
@@ -328,13 +328,13 @@ class Admin extends Controller
 			}
 	}
 
-	//tampil data mahasiswa
-	public function data_mahasiswa()
+	//tampil data murid
+	public function data_murid()
 	{
 		if (!isset($_SESSION['idAdmin'])) {
 			header('Location:'.BASEURL.'/admin/login');
 		}else{
-			$data['judul'] = 'Data Mahasiswa - Administrator';
+			$data['judul'] = 'Data Murid - Administrator';
 			$data['countTunggu'] = $this->model('KasMasuk')->getDataByStatusMenunggu();
 			if ($data['countTunggu'] >= 1) {
 				$data['count'] = '<span class="pull-right-container">
@@ -343,63 +343,20 @@ class Admin extends Controller
 			}else{
 				$data['count'] = '';
 			}
-			$data['mhs'] = $this->model('Mahasiswa')->getAllData();
+			$data['mrd'] = $this->model('Murid')->getAllData();
 			$this->view('admin/header', $data);
-			$this->view('admin/mahasiswa/tampil', $data);
+			$this->view('admin/murid/tampil', $data);
 			$this->view('admin/footer');
 		}
 	}
 
-	//tampil form tambah mahasiswa
-	public function tambah_mahasiswa()
+	//tampil form tambah murid
+	public function tambah_murid()
 	{
 		if (!isset($_SESSION['idAdmin'])) {
 			header('Location:'.BASEURL.'/admin/login');
 		}else{
-			$data['judul'] = 'Tambah Data Mahasiswa - Administrator';
-			$data['countTunggu'] = $this->model('KasMasuk')->getDataByStatusMenunggu();
-			if ($data['countTunggu'] >= 1) {
-				$data['count'] = '<span class="pull-right-container">
-	              <span class="label label-primary pull-right">'.$data['countTunggu'].'</span>
-	            </span>';
-			}else{
-				$data['count'] = '';
-			}
-			$this->view('admin/header', $data);
-			$this->view('admin/mahasiswa/tambah');
-			$this->view('admin/footer');
-		}
-	}
-
-	//tampil form ubah mahasiswa
-	public function ubah_mahasiswa($id)
-	{
-		if (!isset($_SESSION['idAdmin'])) {
-			header('Location:'.BASEURL.'/admin/login');
-		}else{
-			$data['judul'] = 'Ubah Data Mahasiswa - Administrator';
-			$data['countTunggu'] = $this->model('KasMasuk')->getDataByStatusMenunggu();
-			if ($data['countTunggu'] >= 1) {
-				$data['count'] = '<span class="pull-right-container">
-	              <span class="label label-primary pull-right">'.$data['countTunggu'].'</span>
-	            </span>';
-			}else{
-				$data['count'] = '';
-			}
-			$data['mhs'] = $this->model('Mahasiswa')->getSingleData($id);
-			$this->view('admin/header', $data);
-			$this->view('admin/mahasiswa/ubah', $data);
-			$this->view('admin/footer');
-		}
-	}
-
-	//tampil form import mahasiswa
-	public function import_mahasiswa()
-	{
-		if (!isset($_SESSION['idAdmin'])) {
-			header('Location:'.BASEURL.'/admin/login');
-		}else{
-			$data['judul'] = 'Import Data Mahasiswa - Administrator';
+			$data['judul'] = 'Tambah Data Murid - Administrator';
 			$data['countTunggu'] = $this->model('KasMasuk')->getDataByStatusMenunggu();
 			if ($data['countTunggu'] >= 1) {
 				$data['count'] = '<span class="pull-right-container">
@@ -409,93 +366,136 @@ class Admin extends Controller
 				$data['count'] = '';
 			}
 			$this->view('admin/header', $data);
-			$this->view('admin/mahasiswa/import', $data);
+			$this->view('admin/murid/tambah');
 			$this->view('admin/footer');
 		}
 	}
 
-	//insert ke tb user/mahasiswa
-	public function tambah_data_mahasiswa()
+	//tampil form ubah murid
+	public function ubah_murid($id)
+	{
+		if (!isset($_SESSION['idAdmin'])) {
+			header('Location:'.BASEURL.'/admin/login');
+		}else{
+			$data['judul'] = 'Ubah Data Murid - Administrator';
+			$data['countTunggu'] = $this->model('KasMasuk')->getDataByStatusMenunggu();
+			if ($data['countTunggu'] >= 1) {
+				$data['count'] = '<span class="pull-right-container">
+	              <span class="label label-primary pull-right">'.$data['countTunggu'].'</span>
+	            </span>';
+			}else{
+				$data['count'] = '';
+			}
+			$data['mrd'] = $this->model('Murid')->getSingleData($id);
+			$this->view('admin/header', $data);
+			$this->view('admin/murid/ubah', $data);
+			$this->view('admin/footer');
+		}
+	}
+
+	//tampil form import murid
+	public function import_murid()
+	{
+		if (!isset($_SESSION['idAdmin'])) {
+			header('Location:'.BASEURL.'/admin/login');
+		}else{
+			$data['judul'] = 'Import Data Murid - Administrator';
+			$data['countTunggu'] = $this->model('KasMasuk')->getDataByStatusMenunggu();
+			if ($data['countTunggu'] >= 1) {
+				$data['count'] = '<span class="pull-right-container">
+	              <span class="label label-primary pull-right">'.$data['countTunggu'].'</span>
+	            </span>';
+			}else{
+				$data['count'] = '';
+			}
+			$this->view('admin/header', $data);
+			$this->view('admin/murid/import', $data);
+			$this->view('admin/footer');
+		}
+	}
+
+	//insert ke tb user/murid
+	public function tambah_data_murid()
 	{
 		if (isset($_POST['tambah'])) {
 
-			if ($this->model('Mahasiswa')->tambah_mahasiswa($_POST)) {
+			if ($this->model('Murid')->tambah_murid($_POST)) {
 				?>
 				<script>
 					alert('Data berhasil di tambahkan. ');
-					document.location.href="<?= BASEURL; ?>/admin/data_mahasiswa"
+					document.location.href="<?= BASEURL; ?>/admin/data_murid"
 				</script>
 				<?php
 			}else{
 				?>
 				<script>
 					alert('Data gagal di tambahkan. ');
-					document.location.href="<?= BASEURL; ?>/admin/data_mahasiswa"
+					document.location.href="<?= BASEURL; ?>/admin/data_murid"
 				</script>
 				<?php
 			}
 		}
 	}
 
-	//update ke tb user/mahasiswa
-	public function ubah_data_mahasiswa()
+	//update ke tb user/murid
+	public function ubah_data_murid()
 	{
 		if (isset($_POST['ubah'])) {
 
-			if ($this->model('Mahasiswa')->ubah_mahasiswa($_POST)) {
+			if ($this->model('Murid')->ubah_murid($_POST)) {
 				?>
 				<script>
 					alert('Data berhasil di ubah. ');
-					document.location.href="<?= BASEURL; ?>/admin/data_mahasiswa"
+					document.location.href="<?= BASEURL; ?>/admin/data_murid"
 				</script>
 				<?php
 			}else{
 				?>
 				<script>
 					alert('Data gagal di ubah. ');
-					document.location.href="<?= BASEURL; ?>/admin/data_mahasiswa"
+					document.location.href="<?= BASEURL; ?>/admin/data_murid"
 				</script>
 				<?php
 			}
 		}
 	}
 
-	//hapus ke tb user/mahasiswa
-	public function hapus_mahasiswa($id)
+	//hapus ke tb user/murid
+	public function hapus_murid($id)
 	{
-		if ($this->model('Mahasiswa')->hapus_mahasiswa($id)) {
+		if ($this->model('Murid')->hapus_murid($id)) {
 				?>
 				<script>
 					alert('Data berhasil di hapus. ');
-					document.location.href="<?= BASEURL; ?>/admin/data_mahasiswa"
+					document.location.href="<?= BASEURL; ?>/admin/data_murid"
 				</script>
 				<?php
 		}else{
 				?>
 				<script>
 					alert('Data gagal di hapus. ');
-					document.location.href="<?= BASEURL; ?>/admin/data_mahasiswa"
+					document.location.href="<?= BASEURL; ?>/admin/data_murid"
 				</script>
 				<?php
 			}
 		}
 
-	//import data mahasiswa
-	public function import_data_mahasiswa()
+	//import data murid
+	public function import_data_murid()
 	{
 		if (isset($_POST['import'])) {
-			if (!$this->model('Mahasiswa')->import_mahasiswa()) {
+			if (!$this->model('Murid')->import_murid()) {
 				?>
 				<script>
 					alert('Data berhasil di import dan di tambahkan. ');
-					document.location.href="<?= BASEURL; ?>/admin/data_mahasiswa"
+					document.location.href="<?= BASEURL; ?>/admin/data_murid"
 				</script>
 				<?php
 			}else{
 				?>
 				<script>
 					alert('Data gagal di import dan di tambahkan. ');
-					document.location.href="<?= BASEURL; ?>/admin/data_mahasiswa"
+					document.location.href="<?= BASEURL; ?>/admin/data_murid"
 				</script>
 				<?php
 			}
@@ -542,21 +542,21 @@ class Admin extends Controller
 		}
 	}
 
-	public function delAllMahasiswa()
+	public function delAllMurid()
 	{
-		if ($this->model('Mahasiswa')->delAllData()) {
+		if ($this->model('Murid')->delAllData()) {
 			
 			?>
 			<script>
 				alert('Data berhasil di hapus.');
-				document.location.href="<?= BASEURL ?>/admin/data_mahasiswa";
+				document.location.href="<?= BASEURL ?>/admin/data_murid";
 			</script>
 			<?php
 		}else{
 			?>
 			<script>
 				alert('Terjadi keasalahan. Silahkan coba lagi.');
-				document.location.href="<?= BASEURL ?>/admin/data_mahasiswa";
+				document.location.href="<?= BASEURL ?>/admin/data_murid";
 			</script>
 			<?php
 		}

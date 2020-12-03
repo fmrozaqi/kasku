@@ -12,8 +12,8 @@ Cara install aplikasi keepkas di localhost atau xampp :
 ==============================
 Contoh Akun User (anggota kelas) :
 url	= localhost/kasku
-nim 	= 0702163069
-password	= 0702163069
+nim 	= 01001
+password	= 01001
 
 ==============================
 Akun Admin (bendahara kelas) :

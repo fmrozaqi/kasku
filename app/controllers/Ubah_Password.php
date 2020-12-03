@@ -12,8 +12,8 @@ class Ubah_Password extends Controller
     		header('Location:'.BASEURL.'/login');
     	}else {
     		$data['judul'] = 'User Profil';
-    		$data['user'] = $this->model('Mahasiswa')->getUser();
-    		$data['countSiswa'] = $this->model('Mahasiswa')->getRowCount();
+    		$data['user'] = $this->model('Murid')->getUser();
+    		$data['countSiswa'] = $this->model('Murid')->getRowCount();
     		$data['keluar'] = $this->model('Kaskeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
@@ -43,7 +43,7 @@ class Ubah_Password extends Controller
 	public function ubah($id)
 	{
 		if (isset($_POST['ubah'])) {
-			if ($this->model('Mahasiswa')->ubahPassword($id)) {
+			if ($this->model('Murid')->ubahPassword($id)) {
 				?>
 				<script>
 					alert('Password berhasil di ubah.');

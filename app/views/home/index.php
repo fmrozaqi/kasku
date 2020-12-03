@@ -1,15 +1,15 @@
         <div class="col-md-8">
         	<div class="box box-success">
 	            <div class="box-header with-border">
-	              <h3 class="box-title">Mahasiswa</h3>
+	              <h3 class="box-title">Murid</h3>
 	          	</div>
 	          	<div class="box-body">
 	          		<ul class="products-list product-list-in-box">
-	          			<?php foreach ($data['mhs'] as $mhs) { 
-	          				if (empty($mhs['gambar'])) {
+	          			<?php foreach ($data['mrd'] as $mrd) { 
+	          				if (empty($mrd['gambar'])) {
 				                    $data['img'] = ''.BASEURL.'/assets/dist/img/user.png';
 				                }else{
-				                    $data['img'] = ''.BASEURL.'/assets/dist/img/'.$mhs['gambar'].'';
+				                    $data['img'] = ''.BASEURL.'/assets/dist/img/'.$mrd['gambar'].'';
 				                }
 	          				?>
 		                <li class="item">
@@ -17,10 +17,10 @@
 		                    <img src="<?= $data['img'] ?>" class="img-circle" alt="User Image">
 		                  </div>
 		                  <div class="product-info">
-		                    <a href="<?= BASEURL ?>/profil/<?= $mhs['id_user'] ?>" class="product-title"><?= $mhs['nama'] ?>
-		                      <span class="label label-success pull-right"><?= 'Rp. ' .number_format($mhs['jumlah']) ?></span></a>
+		                    <a href="<?= BASEURL ?>/profil/<?= $mrd['id_user'] ?>" class="product-title"><?= $mrd['nama'] ?>
+		                      <span class="label label-success pull-right"><?= 'Rp. ' .number_format($mrd['jumlah']) ?></span></a>
 		                    <span class="product-description">
-		                          <?= $value = ($mhs['jumlah'] != "") ? 'Terakhir bayar kas pada ' .$mhs['tgl']. '' : 'Belum pernah membayar uang kas.'; ?>
+		                          <?= $value = ($mrd['jumlah'] != "") ? 'Terakhir bayar kas pada ' .$mrd['tgl']. '' : 'Belum pernah membayar uang kas.'; ?>
 		                        </span>
 		                  </div>
 		                </li>

@@ -8,7 +8,7 @@ class Logout extends Controller
 	
 	public function index()
 	{
-		if ($this->model('Mahasiswa')->logout()) {
+		if ($this->model('Murid')->logout()) {
 			header('Location:' .BASEURL. '');
 		}
 	}

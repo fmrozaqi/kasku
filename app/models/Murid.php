@@ -3,7 +3,7 @@
 /**
  * 
  */
-class Mahasiswa {
+class Murid {
 
 	private $table = 'tb_user';
 	private $db;
@@ -43,7 +43,7 @@ class Mahasiswa {
     }
 
     //fungsi tambah data
-    public function tambah_mahasiswa($data)
+    public function tambah_murid($data)
     {   
         $query = "INSERT INTO ". $this->table ." (username, password, nama, kelas)
                     VALUES (:username, :password, :nama, :kelas)";
@@ -60,7 +60,7 @@ class Mahasiswa {
     }
 
     //fungsi ubah data
-    public function ubah_mahasiswa($data)
+    public function ubah_murid($data)
     {   
         $query = "UPDATE ". $this->table ." SET nama=:nama, kelas=:kelas WHERE id_user=:id";
         
@@ -75,7 +75,7 @@ class Mahasiswa {
     }
 
     //fungsi hapus data
-    public function hapus_mahasiswa($id)
+    public function hapus_murid($id)
     {   
         $query = "DELETE FROM ". $this->table ." WHERE id_user=:id";
         
@@ -87,8 +87,8 @@ class Mahasiswa {
         return $this->db->rowCount();
     }
 
-    //fungsi menambahkan data mahasiswa dengan import file
-    public function import_mahasiswa()
+    //fungsi menambahkan data murid dengan import file
+    public function import_murid()
     {
     	$ekstensi_diperbolehkan	= array('xlsx');
 		$namafile 				= $_FILES['file']['name'];
@@ -101,7 +101,7 @@ class Mahasiswa {
 
 			if ($ukuran < 1044070) {
 
-				$nama_baru = 'Mahasiswa';
+				$nama_baru = 'Murid';
 				$nama_baru .= '.';
 				$nama_baru .= $ekstensi;
 

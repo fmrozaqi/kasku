@@ -101,8 +101,8 @@
           </a>
         </li>
         <li>
-          <a href="<?= BASEURL; ?>/admin/data_mahasiswa">
-            <i class="fa fa-group"></i> <span>Data Mahasiswa</span>
+          <a href="<?= BASEURL; ?>/admin/data_murid">
+            <i class="fa fa-group"></i> <span>Data Murid</span>
           </a>
         </li>
       </ul>

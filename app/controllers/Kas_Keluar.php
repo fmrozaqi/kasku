@@ -12,13 +12,13 @@ class Kas_Keluar extends Controller
     		header('Location:'.BASEURL.'/login');
     	}else {
     		$data['judul'] = 'Sistem Pengolahan Uang Kas Kelas';
-    		// $data['mhs'] = $this->model('Mahasiswa')->getLimitData();
-    		$data['user'] = $this->model('Mahasiswa')->getUser();
+    		// $data['mrd'] = $this->model('Murid')->getLimitData();
+    		$data['user'] = $this->model('Murid')->getUser();
     		$data['keluar'] = $this->model('Kaskeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
                 }
-            $data['countSiswa'] = $this->model('Mahasiswa')->getRowCount();
+            $data['countSiswa'] = $this->model('Murid')->getRowCount();
             $data['jumlahMasuk'] = $this->model('KasMasuk')->getDataByStatus();
                 foreach ($data['jumlahMasuk'] as $d) {
                     $data['jlhMasuk'] = $data['jlhMasuk'] + $d['jumlah'];

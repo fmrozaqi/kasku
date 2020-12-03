@@ -6,7 +6,7 @@
             <div class="inner">
               <h3 style="font-size: 19px;"><?= $data['countSiswa'] ?> Orang</h3>
 
-              <p>Mahasiswa</p>
+              <p>Murid</p>
             </div>
             <div class="icon">
               <!-- <i class="fa fa-group"></i> -->

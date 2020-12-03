@@ -11,7 +11,7 @@
             <span class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
 
             <div class="info-box-content">
-              <span class="info-box-text">Mahasiswa</span>
+              <span class="info-box-text">Murid</span>
               <span class="info-box-number"><?= $data['countSiswa'] ?> Orang </span>
             </div>
             <!-- /.info-box-content -->
@@ -69,7 +69,7 @@
         <div class="col-md-8">
           <div class="box box-warning">
             <div class="box-header with-border">
-              <h3 class="box-title">Data Mahasiswa</h3>
+              <h3 class="box-title">Data Murid</h3>
             </div>
             <div class="box-body">
             	<table class="table table-bordered table table-bordered table-striped">
@@ -82,19 +82,19 @@
                   </tr>
                   </thead>
                   <tbody>
-                  	<?php foreach ($data['mhs'] as $mhs) { ?>
+                  	<?php foreach ($data['mrd'] as $mrd) { ?>
                     <tr>
-                    	<td><?= $mhs['username'] ?></td>
-                    	<td><?= $mhs['nama'] ?></td>
-                    	<td><?= $mhs['kelas'] ?></td>
-                    	<td><?= 'Rp. ' .number_format($mhs['jumlah']) ?></td>
+                    	<td><?= $mrd['username'] ?></td>
+                    	<td><?= $mrd['nama'] ?></td>
+                    	<td><?= $mrd['kelas'] ?></td>
+                    	<td><?= 'Rp. ' .number_format($mrd['jumlah']) ?></td>
                     </tr>
                     <?php } ?>
                   </tbody>
                 </table>
             </div>
             	<div class="box-footer clearfix">
-	              <a href="<?= BASEURL ?>/admin/data_mahasiswa" class="btn btn-sm btn-warning pull-left">Lihat Semua</a>
+	              <a href="<?= BASEURL ?>/admin/data_murid" class="btn btn-sm btn-warning pull-left">Lihat Semua</a>
 	            </div>
           </div>
     	</div><!-- col-md-8 -->

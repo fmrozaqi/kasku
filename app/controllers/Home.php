@@ -10,16 +10,16 @@ class Home extends Controller {
     		$data['judul'] = 'Sistem Pengolahan Uang Kas Kelas';
 
             $batas = 5;
-            $jumlah = $this->model('Mahasiswa')->getRowCount();
+            $jumlah = $this->model('Murid')->getRowCount();
             $data['halaman'] = ceil($jumlah / $batas);
             $data['page']    = (isset($_GET['hal'])) ? (int)$_GET['hal'] : 1;
             $mulai   = ($data['page'] - 1) * $batas;
-            $data['mhs'] = $this->model('Mahasiswa')->getLimitData($mulai,$batas);
+            $data['mrd'] = $this->model('Murid')->getLimitData($mulai,$batas);
             
             
 
-    		$data['user'] = $this->model('Mahasiswa')->getUser();
-            $data['countSiswa'] = $this->model('Mahasiswa')->getRowCount();
+    		$data['user'] = $this->model('Murid')->getUser();
+            $data['countSiswa'] = $this->model('Murid')->getRowCount();
             $data['keluar'] = $this->model('Kaskeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];

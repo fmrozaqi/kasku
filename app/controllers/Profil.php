@@ -12,11 +12,11 @@ class Profil extends Controller
     		header('Location:'.BASEURL.'/login');
     	}else {
     		$data['judul'] = 'User Profil';
-    		// $data['mhs'] = $this->model('Mahasiswa')->getLimitData();
-    		$data['user'] = $this->model('Mahasiswa')->getUser();
-    		$data['profil'] = $this->model('Mahasiswa')->getSingleData($id);
+    		// $data['mrd'] = $this->model('Murid')->getLimitData();
+    		$data['user'] = $this->model('Murid')->getUser();
+    		$data['profil'] = $this->model('Murid')->getSingleData($id);
             $nim = $data['profil']['username'];
-            $data['countSiswa'] = $this->model('Mahasiswa')->getRowCount();
+            $data['countSiswa'] = $this->model('Murid')->getRowCount();
             $data['keluar'] = $this->model('Kaskeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
@@ -63,7 +63,7 @@ class Profil extends Controller
     public function ubah($id)
     {
         if (isset($_POST['ubah'])) {
-            if ($this->model('Mahasiswa')->ubahProfil($id)) {
+            if ($this->model('Murid')->ubahProfil($id)) {
                 ?>
                 <script>
                     alert('Profil berhasil di ubah.');

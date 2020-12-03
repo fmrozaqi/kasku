@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2020 at 03:48 AM
+-- Generation Time: Dec 03, 2020 at 03:26 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -91,14 +91,11 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama`, `kelas`, `jumlah`, `tgl`, `gambar`) VALUES
-(80, '0702163066', '0702163066', 'Anggi Syahputri', 'SI-2', NULL, NULL, NULL),
-(81, '0702163067', '0702163067', 'Abdul Alfatah', 'SI-2', NULL, NULL, NULL),
-(82, '0702163068', '0702163068', 'Nada Dayatillah', 'SI-2', NULL, NULL, NULL),
-(83, '0702163069', '0702163069', 'Elfani Rizky', 'SI-2', NULL, NULL, NULL),
-(84, '0702163070', '0702163070', 'Teguh Kurniawan', 'SI-2', NULL, NULL, NULL),
-(85, '0702163071', '0702163071', 'Rahmad Aulia', 'SI-2', NULL, NULL, NULL),
-(86, '0702163066', '0702163066', 'fdsa', 'fdsa', NULL, NULL, NULL),
-(87, '0702163066', '0702163066', 'fdsa', 'fdasfsadfa', NULL, NULL, NULL);
+(88, '01001', '01001', 'Amelia Dita', 'IPA 1', NULL, NULL, NULL),
+(89, '01002', '01002', 'Farhan Renaldi', 'IPA 1', NULL, NULL, NULL),
+(90, '01003', '01003', 'Faiz Miftakhur Rozaq', 'IPA 1', NULL, NULL, NULL),
+(91, '01004', '01004', 'Rizky Cikrananda', 'IPA 1', NULL, NULL, NULL),
+(92, '01005', '01005', 'Yusfi Adilaksa', 'IPA 1', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -154,7 +151,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
+  MODIFY `id_user` int(15) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=93;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -20,7 +20,7 @@ class Login extends Controller
 			$user = $_POST['nim'];
 			$pass = $_POST['pass'];
 
-			if ($this->model('Mahasiswa')->cekLogin($user, $pass)) {
+			if ($this->model('Murid')->cekLogin($user, $pass)) {
 				header('Location:'.BASEURL.'');
 			}else{
 				?>

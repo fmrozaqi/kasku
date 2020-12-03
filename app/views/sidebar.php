@@ -12,7 +12,7 @@
       						<a href="<?= BASEURL ?>/rincian/<?= $data['user']['username'] ?>"><b>Rincian Kas Saya</b></a>
       					</li>
       					<li class="list-group-item">
-      						<a href="<?= BASEURL ?>"><b>Data Mahasiswa</b></a>
+      						<a href="<?= BASEURL ?>"><b>Data Murid</b></a>
       					</li>
       					<li class="list-group-item">
       						<a href="<?= BASEURL ?>/ubah_password"><b>Ubah Password</b></a>
