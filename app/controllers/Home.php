@@ -7,6 +7,7 @@ class Home extends Controller {
     	if (!isset($_SESSION['id'])) {
     		header('Location:'.BASEURL.'/login');
     	}else {
+
     		$data['judul'] = 'Sistem Pengolahan Uang Kas Kelas';
 
             $batas = 5;
@@ -20,10 +21,13 @@ class Home extends Controller {
 
     		$data['user'] = $this->model('Murid')->getUser();
             $data['countSiswa'] = $this->model('Murid')->getRowCount();
-            $data['keluar'] = $this->model('Kaskeluar')->getAllData();
+
+            $data['keluar'] = $this->model('KasKeluar')->getAllData();
+
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
                 }
+
             $data['jumlahMasuk'] = $this->model('KasMasuk')->getDataByStatus();
                 foreach ($data['jumlahMasuk'] as $d) {
                     $data['jlhMasuk'] = $data['jlhMasuk'] + $d['jumlah'];
@@ -36,7 +40,6 @@ class Home extends Controller {
     		}else{
     			$data['img'] = ''.BASEURL.'/assets/dist/img/user.png';
     		}
-    		
 	        $this->view('header', $data);
 	        $this->view('widget', $data);
 	        $this->view('sidebar', $data);
