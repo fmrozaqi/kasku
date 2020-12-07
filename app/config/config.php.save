@@ -1,0 +1,9 @@
+<?php 
+
+define('BASEURL', 'http://http://ec2-34-227-159-124.compute-1.amazonaws.com//kasku');
+
+// DB
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+define('DB_NAME', 'kasku_mvc');
