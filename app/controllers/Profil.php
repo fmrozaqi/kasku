@@ -17,7 +17,7 @@ class Profil extends Controller
     		$data['profil'] = $this->model('Murid')->getSingleData($id);
             $nim = $data['profil']['username'];
             $data['countSiswa'] = $this->model('Murid')->getRowCount();
-            $data['keluar'] = $this->model('Kaskeluar')->getAllData();
+            $data['keluar'] = $this->model('KasKeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
                 }

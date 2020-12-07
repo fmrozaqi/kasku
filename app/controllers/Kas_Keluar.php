@@ -14,7 +14,7 @@ class Kas_Keluar extends Controller
     		$data['judul'] = 'Sistem Pengolahan Uang Kas Kelas';
     		// $data['mrd'] = $this->model('Murid')->getLimitData();
     		$data['user'] = $this->model('Murid')->getUser();
-    		$data['keluar'] = $this->model('Kaskeluar')->getAllData();
+    		$data['keluar'] = $this->model('KasKeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
                 }

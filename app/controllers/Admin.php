@@ -26,7 +26,7 @@ class Admin extends Controller
 			$data['masuk'] = $this->model('KasMasuk')->getLimitData(4);
 			$data['mrd'] = $this->model('Murid')->getLimitData(0,3);
 			$data['countSiswa'] = $this->model('Murid')->getRowCount();
-            $data['keluar'] = $this->model('Kaskeluar')->getAllData();
+            $data['keluar'] = $this->model('KasKeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
                 }

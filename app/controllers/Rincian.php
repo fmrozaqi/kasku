@@ -15,7 +15,7 @@ class Rincian extends Controller
     		$data['user'] = $this->model('Murid')->getUser();
     		$data['rincian'] = $this->model('KasMasuk')->getSingleJlh($nim);
             $data['countSiswa'] = $this->model('Murid')->getRowCount();
-            $data['keluar'] = $this->model('Kaskeluar')->getAllData();
+            $data['keluar'] = $this->model('KasKeluar')->getAllData();
                 foreach ($data['keluar'] as $dd) {
                     $data['jlhKeluar'] = $data['jlhKeluar'] + $dd['jumlah'];
                 }
