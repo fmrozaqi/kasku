@@ -54,7 +54,7 @@ class Admin extends Controller
 	{
 		if (isset($_POST['login'])) {
 			
-			if ($this->model('admin_model')->login()) {
+			if ($this->model('Admin_model')->login()) {
 				
 				header('Location:'.BASEURL.'/admin');
 			}else{
@@ -71,7 +71,7 @@ class Admin extends Controller
 	//logout
 	public function logout()
 	{
-		if ($this->model('admin_model')->logout()) {
+		if ($this->model('Admin_model')->logout()) {
 			header('Location:'.BASEURL.'/admin');
 		}
 	}
@@ -84,7 +84,7 @@ class Admin extends Controller
 		}else{
 			$data['judul'] = 'Ubah Password';
 			$data['countTunggu'] = $this->model('KasMasuk')->getDataByStatusMenunggu();
-			$data['id'] = $this->model('admin_model')->getUser();
+			$data['id'] = $this->model('Admin_model')->getUser();
 			if ($data['countTunggu'] >= 1) {
 				$data['count'] = '<span class="pull-right-container">
 	              <span class="label label-primary pull-right">'.$data['countTunggu'].'</span>
@@ -103,7 +103,7 @@ class Admin extends Controller
 	{
 		if (isset($_POST['ubah_password'])) {
 			
-			if ($this->model('admin_model')->ubahPassword($id)) {
+			if ($this->model('Admin_model')->ubahPassword($id)) {
 				?>
 				<script>
 					alert('Password berhasil di ubah.');
