@@ -12,6 +12,8 @@ class App {
 
         $file_name = 'app/controllers/' . $url[0] . '.php' ;
         echo $file_name;
+        $file_list = scandir('app/controllers/');
+        var_dump($file_list);
 
         // controller
         if( file_exists('app/controllers/' . $url[0] . '.php') ) {
